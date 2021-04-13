@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+}
+
+:root {
+	--primary-color: lightseagreen;
+}
+.post {
+  padding: 40px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	flex-direction: column;
+}
+.container {
+	color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+	max-width: 600px;
+	width: 60vw;
+	flex-direction: column;
+}
+
+.container h1, .container h2, .container h3, .container h4, .container h5 {
+  text-align: center;
+}
+
+hr {
+  display: block;
+  height: 2px;
+  border: none;
+  background: linear-gradient(to right, transparent, lightblue, lightgreen, transparent)
+}
+
+pre, pre * {
+  font-family: "Anonymous Pro", 'Courier New', Courier, monospace;
+}
+code {
+  background: #0002;
+  border-radius: 5px;
+  padding: 10px;
+}
+.container h1 {
+  background: linear-gradient(to right, lightseagreen, #1c6);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.container h2 {
+  color: lightseagreen;
+}
+.container h3 {
+  color: lightslategrey;
+}
+.container h4 {
+  color: #d05;
+}
+code:not(pre code){
+  padding: 3px;
+  display: inline-block;
+  color: #333;
+  margin: 2px;
+};
+details {
+  border-radius: 5px;
+  background: var(--accents);
+  margin: 5px;
+  padding: 5px;
+}
+
+details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #0001;
+  padding: 10px 10px 0;
+  margin: 1em 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+details[open] {
+  padding: 10px;
+}
+
+details > :last-child {
+  margin-bottom: 0;
+}
+
+details[open] summary {
+  margin-bottom: 10px;
+}
+
+summary {
+  display: list-item;
+  background-color: #088;
+  padding: 10px;
+  color: white;
+  margin: -10px -10px 0;
+}
+
+details > :not(summary) {
+  margin-top: 0;
+}

@@ -1,0 +1,75 @@
+<header>
+	<h1 id="logo">Blog</h1>
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="mailto:explosionscratch@gmail.com">Contact</a></li>
+		</ul>
+	</nav>
+</header>
+<style>
+	body {
+		font-family: sans-serif;
+	}
+
+	header h1,
+	header ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	header {
+		z-index: 10000;
+		align-items: center;
+		display: flex;
+	}
+
+	nav ul {
+		display: flex;
+		justify-content: space-around;
+	}
+
+	nav li {
+		list-style: none;
+	}
+
+	header {
+		background: #eee;
+		padding: 20px;
+		position: fixed;
+		width: 100vw;
+		top: 0;
+		left: 0;
+		margin: none !important;
+	}
+
+	#logo {
+		flex: 1;
+	}
+	nav {
+		flex: 0.3;
+	}
+	header a {
+		text-decoration: none;
+		color: #333;
+	}
+	header li {
+		height: 100%;
+		border: 1px solid transparent;
+		transition: border-color .2s ease;
+		padding: 10px;
+		border-radius: 5px;
+	}
+	header li:hover {
+		border: 1px solid #ddd
+	}
+	header {
+		background: #fff1;
+		backdrop-filter: blur(10px);
+		box-shadow: 0 2px 4px #0002;
+	}
+	#logo {
+		padding-left: 2vw;
+	}
+
+</style>

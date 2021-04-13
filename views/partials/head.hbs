@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/explosion-scratch/ripple/ripple.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/explosion-scratch/popup/popup.js"></script>
+<link rel="stylehseet" href="https://cdn.jsdelivr.net/gh/explosion-scratch/popup/popup.css">
+<link rel="stylesheet" href="/hljs.css">
+<link rel="stylesheet" href="/normalize.css">
+<link rel="stylesheet" href="/style.css">
+<script>hljs.highlightAll();</script>
+<script type="module">
+		import * as _$ from "https://cdnjs.cloudflare.com/ajax/libs/Bijou.js/7.4.0/bijou-min.js";
+		_$.each(document.querySelectorAll(".button"), (btn) => {
+			btn.setAttribute("data-ripple", "");
+			btn.setAttribute("data-event", "mousedown")
+			btn.setAttribute("data-time", 300);
+			btn.setAttribute("data-color", "lightseagreen");
+			btn.setAttribute("data-opacity", ".5");
+		})
+		ripple();
+</script>
