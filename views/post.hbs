@@ -1,7 +1,24 @@
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://blog.explosionscratc.repl.co/favicon.png">
+<meta property="og:title" content="{{post.title}}" />
+<meta property="og:description" content="{{firstSection post.text}}" />
+<meta property="og:url" content="https://blog.explosionscratc.repl.co/post/{{post.id}}" />
+<meta property="twitter:card" content="summary_small_image" />
+<meta name="theme-color" content="#00bbbb" />
+<meta property="og:author" content="--Explosion--" />
+<link type="application/json+oembed" href="https://blog.explosionscratc.repl.co/meta.json" />
 <div class="post">
 	<h1>{{post.title}}</h1>
+	<center><i>{{readingTime post.text}}</i></center>
 	<hr>
 	<main>
 		{{{markdown post.text}}}
 	</main>
 </div>
+<script>
+	[...document.querySelectorAll(".post main h2, .post main h3, .post main h1")].forEach(e => {
+		e.onclick = () => {
+			window.location.hash = e.id;
+		}
+	})
+</script>

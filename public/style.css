@@ -3,33 +3,35 @@
 * {
 	box-sizing: border-box;
 	font-family: "Montserrat", sans-serif;
+	scroll-behavior: smooth;
 }
 
 :root {
 	--primary-color: lightseagreen;
 }
-.post {
-  padding: 40px;
-}
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-	flex-direction: column;
+  min-height: 100vh;
+  flex-direction: column;
 }
 .container {
+  max-width: 700px;
+  width: 80vw;
+}
+.post {
+  padding: 40px;
+	margin-top: 60px;
+}
+
+.container {
 	color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-	max-width: 600px;
-	width: 60vw;
-	flex-direction: column;
 }
 
 .container h1, .container h2, .container h3, .container h4, .container h5 {
   text-align: center;
+	margin-top: 40px;
 }
 
 hr {
@@ -108,4 +110,59 @@ summary {
 
 details > :not(summary) {
   margin-top: 0;
+}
+.post img {
+  width: 80%;
+  object-fit: contain;
+  padding: 10px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 30px 0 30px 0;
+  border: 2px solid #0bb;
+}
+
+.scroll-container {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  background: transparent;
+  height: 3px;
+  width: 100vw;
+  z-index: 10000000;
+}
+.scroll-progress {
+  background: linear-gradient(to right, #0d8, lightseagreen);
+  display: block;
+  width: 0%;
+  height: 3px;
+  transition: width .3s ease;
+}
+h2::before {
+  content: "#";
+  width: 0;
+  display: inline-block;
+  user-select: none;
+  color: transparent;
+  transition: width .3s ease, color .4s ease;
+}
+h2:hover::before {
+  width: 20px;
+  color: lightseagreen;
+  cursor: pointer;
+}
+h2.hash {
+  animation: flash 1s ease infinite;
+  animation-iteration-count: 5;
+}
+@keyframes flash {
+  0% {
+    color: lightblue;
+  }
+  50% {
+    color: rgb(41, 161, 209);
+  }
+  100% {
+    color: lightblue;
+  }
 }

@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/explosion-scratch/ripple/ripple.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/explosion-scratch/popup/popup.js"></script>
 <link rel="stylehseet" href="https://cdn.jsdelivr.net/gh/explosion-scratch/popup/popup.css">
@@ -17,4 +18,26 @@
 			btn.setAttribute("data-opacity", ".5");
 		})
 		ripple();
+</script>
+<script>
+	let lastScrollTop = 0;
+	window.onscroll = function(){
+		document.querySelector(".scroll-progress").style.width = `${((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100)}%`;
+		var st = window.pageYOffset || document.documentElement.scrollTop;
+		if (st > lastScrollTop){
+				document.querySelector("header").classList.remove("shown")
+		} else {
+				document.querySelector("header").classList.add("shown")
+		}
+		lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+		if (window.scrollY < 150){
+			document.querySelector("header").classList.add("shown");
+		}
+	}
+	window.onload = () => {
+		if (window.location.hash){
+			document.querySelector(window.location.hash).scrollIntoView({block: "center"});
+			document.querySelector(window.location.hash).classList.add("hash")
+		}
+	}
 </script>

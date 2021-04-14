@@ -1,5 +1,6 @@
-<header>
-	<h1 id="logo">Blog</h1>
+<div class="scroll-container"><div class="scroll-progress"></div></div>
+<header class="shown">
+	<h1 id="logo"><span class="iconify" data-icon="bx:bx-code-curly"></span> Blog</h1>
 	<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
@@ -71,5 +72,11 @@
 	#logo {
 		padding-left: 2vw;
 	}
-
+header {
+  top: -100px;
+  transition: top .5s ease;
+}
+header.shown {
+  top: 0;
+}
 </style>
